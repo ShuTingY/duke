@@ -15,6 +15,7 @@ public class Duke {
             String msg = sc.next();
             if(msg.equals("bye")) {
                 Message.leavingMsg();
+                break;
             } else {
                 msg += sc.nextLine();
                 Message.echo(msg);

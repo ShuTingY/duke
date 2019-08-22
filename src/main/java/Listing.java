@@ -47,6 +47,7 @@ public class Listing {
     }
 
     public void listing() {
+        System.out.println("Here are the tasks in your list:");
         for (int i = 0; i < list.size(); i++) {
             Task tk = list.get(i);
             System.out.println( i + 1 + "." + tk);

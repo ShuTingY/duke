@@ -47,6 +47,7 @@ public class UiText {
      */
 
     public void printlnMsg(String msg) {
+        assert msg.trim().length() > 0 : msg;
         out.println(msg);
     }
 
@@ -105,6 +106,7 @@ public class UiText {
      */
 
     public static String markedMsg(Task task) {
+        assert task.getStatus() : task;
         return String.format("Nice! I've marked this task as done:\n"
                         + "  " + task);
     }
@@ -122,6 +124,7 @@ public class UiText {
     }
 
     public static String findMsg(ArrayList<Task> tasks) {
+        assert tasks.size() > 0;
         StringBuilder output = new StringBuilder();
         String title = "Here are the matching tasks in your list\n";
         output.append(title);
@@ -134,6 +137,7 @@ public class UiText {
     }
 
     public static String listingMsg(ArrayList<Task> tasks) {
+        assert tasks.size() > 0;
         StringBuilder output = new StringBuilder();
         output.append("Here are the tasks in your list:\n");
         boolean isFirst = true;

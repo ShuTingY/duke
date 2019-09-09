@@ -21,7 +21,7 @@ import java.io.FileReader;
 public class Storage {
     private static File file;
     private UiText ui = new UiText();
-    public static final String DEDAULT_PATH = "src/main/data/duke.txt";
+    public static final String DEFAULT_PATH = "src/main/data/duke.txt";
 
     /**
      * Constructor to construct a Storage with given file path.
@@ -50,14 +50,11 @@ public class Storage {
     public ArrayList<Task> load() {
         ArrayList<Task> arr = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file)))  {
-
             String currentLine;
-
             while ((currentLine = br.readLine()) != null) {
                 String[] input = currentLine.split(" \\| ");
                 arr.add(new Task(input));
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,7 +81,6 @@ public class Storage {
         FileWriter writer = new FileWriter(file);
         for (Task task : tasks) {
             String input = "";
-
             switch (task.getTaskType()) {
             case TODO:
                 input = String.format("T | %d | %s\n",

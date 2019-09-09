@@ -32,13 +32,12 @@ public class Duke {
         try {
             tasks = new TaskList(storage.load());
         } catch (DukeException e) {
-            //ui.showLoadingError();
             tasks = new TaskList();
         }
     }
 
     public Duke() {
-        this(Storage.DEDAULT_PATH);
+        this(Storage.DEFAULT_PATH);
     }
 
     public String getResponse(String text) {

@@ -68,6 +68,10 @@ public class Task {
         return bit.equals("1");
     }
 
+    public boolean getStatus() {
+        return isDone;
+    }
+
     public void markAsDone() {
         isDone = true;
     }

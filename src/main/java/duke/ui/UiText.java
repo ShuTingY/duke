@@ -86,7 +86,7 @@ public class UiText {
     }
 
 
-    public static String LoadingError() {
+    public static String loadingError() {
         return "Cannot load the file";
     }
 
@@ -106,7 +106,7 @@ public class UiText {
      */
 
     public static String markedMsg(Task task) {
-        assert task.getStatus() : task;
+        assert task.getStatusBit() == 1 : task;
         return String.format("Nice! I've marked this task as done:\n"
                         + "  " + task);
     }
@@ -157,6 +157,19 @@ public class UiText {
         return output.toString();
     }
 
+    public static String itemsFromFile(Scanner sc) {
+        String output = "";
+        boolean isFirst = true;
+        while (sc.hasNext()) {
+            if (isFirst) {
+                output += sc.nextLine();
+                isFirst = false;
+            } else {
+                output += "\n" + sc.nextLine();
+            }
+        }
+        return output;
+    }
     public static String unableToWriteFileError() {
         return "Unable to write the file";
     }

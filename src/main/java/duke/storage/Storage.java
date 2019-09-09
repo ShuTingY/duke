@@ -36,11 +36,9 @@ public class Storage {
      *
      * @throws FileNotFoundException throw exception if the file does not exist
      */
-    public void printFileContents() throws FileNotFoundException {
+    public static String fileContents() throws FileNotFoundException {
         Scanner sc = new Scanner(file);
-        while (sc.hasNext()) {
-            ui.printlnMsg(sc.nextLine());
-        }
+        return UiText.itemsFromFile(sc);
     }
 
     /**
